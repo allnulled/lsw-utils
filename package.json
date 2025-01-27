@@ -1,0 +1,14 @@
+{
+  "name": "lsw-utils",
+  "version": "1.0.0",
+  "description": "Utilities tool for Lite Starter Webkit.",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'no building for @allnulled/lsw-utils'",
+    "versionate": "echo 'no versionate for @allnulled/lsw-utils'",
+    "test": "echo 'no test for @allnulled/lsw-utils'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
