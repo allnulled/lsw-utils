@@ -191,5 +191,18 @@
     },
   });
 
+
+
+
+
+
+  // API de LSW:
+
+  LswUtils.formatHour = function(horaInput, minutoInput) {
+    const hora = ("" + horaInput).padStart(2, '0');
+    const minuto = ("" + minutoInput).padStart(2, '0');
+    return `${hora}:${minuto}`;
+  };
+
   return LswUtils;
 });
