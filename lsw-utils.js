@@ -205,7 +205,16 @@
 
   LswUtils.pluralizar = function(singular, plural, contexto, cantidad) {
     return contexto.replace("%s", cantidad === 1 ? singular : plural).replace("%i", cantidad);
-  }
+  };
+
+  LswUtils.getRandomString = function(len = 10) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    let out = "";
+    while(out.length < len) {
+      out += alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+    return out;
+  };
 
   LswUtils.hello = function() {
     console.log("hello");
