@@ -191,17 +191,24 @@
     },
   });
 
-
-
-
-
-
   // API de LSW:
+  LswUtils.toPlainObject = function(obj) {
+    const seen = new WeakSet();
+    return JSON.parse(JSON.stringify(obj, (key, value) => {
+      if (typeof value === "object" && value !== null) {
+        if (seen.has(value)) return undefined; // Ignora referencias circulares
+        seen.add(value);
+      }
+      return value;
+    }));
+  };
 
-  LswUtils.formatHour = function(horaInput, minutoInput) {
-    const hora = ("" + horaInput).padStart(2, '0');
-    const minuto = ("" + minutoInput).padStart(2, '0');
-    return `${hora}:${minuto}`;
+  LswUtils.pluralizar = function(singular, plural, contexto, cantidad) {
+    return contexto.replace("%s", cantidad === 1 ? singular : plural).replace("%i", cantidad);
+  }
+
+  LswUtils.hello = function() {
+    console.log("hello");
   };
 
   return LswUtils;
